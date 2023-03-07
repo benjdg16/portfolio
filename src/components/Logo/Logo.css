@@ -1,0 +1,26 @@
+.logo {
+  display: flex;
+}
+
+.logo-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.logo-text#benjdg16 {
+  color: white;
+  font-weight: 300;
+}
+
+.logo-text#dev {
+  background: rgb(255, 74, 74);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 74, 74, 1) 0%,
+    rgba(255, 211, 57, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}

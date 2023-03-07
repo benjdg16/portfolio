@@ -1,0 +1,168 @@
+.ahome-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  /* border: solid 1px red; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.ahome {
+  height: 100vh;
+  background-image: url(/src/assets/gradient-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ahome-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* .home-container {
+  min-height: 100%;
+  height: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.home {
+  height: 110%;
+  width: 110%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url(/src/assets/gradient-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+} */
+
+/* .home-container {
+  height: 100vh;
+  width: 100%;
+} */
+
+section#home {
+  height: 100vh;
+  width: 100%;
+}
+
+.home-bg {
+  height: 100%;
+  width: 100%;
+  background-image: url(/src/assets/gradient-bg.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+}
+
+.hero-text-container {
+  flex: 1 1 50%;
+  min-width: 50%;
+}
+
+.hero-superscript {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.25rem;
+}
+
+.hero-text {
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+.hero-text h1 {
+  font-size: 5.25rem;
+}
+
+.hero-text #name {
+  background: rgb(255, 74, 74);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 74, 74, 1) 0%,
+    rgba(255, 211, 57, 1) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  /* font-weight: 700; */
+}
+
+.hero-subscript {
+  color: #d1d1d1;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 2rem;
+}
+
+code.role {
+  background-color: black;
+  color: #d7ab4c;
+}
+
+.hero-svg-container {
+  flex: 1 1 50%;
+  min-width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 32rem;
+}
+
+.hero-svg-container svg {
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+svg#css-logo {
+  left: 54%;
+  top: 11%;
+}
+
+svg#html-logo {
+  top: 28%;
+  left: 32%;
+}
+
+svg#js-logo {
+  top: 76%;
+  left: 27%;
+}
+
+svg#next-logo {
+  top: 93%;
+  left: 66%;
+}
+
+svg#node-logo {
+  top: 65%;
+  left: 86%;
+}
+
+svg#react-logo {
+  left: 57%;
+  top: 50%;
+}
+
+svg#ts-logo {
+  top: 27%;
+  left: 82%;
+}
