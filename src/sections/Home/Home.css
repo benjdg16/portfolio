@@ -55,9 +55,17 @@ section#home {
 .home-bg {
   height: 100%;
   width: 100%;
-  background-image: url(/src/assets/gradient-bg.svg);
+  /* background-image: url(/src/assets/gradient-bg.svg); */
+  /* background-image: url(/src/assets/magicpattern-mesh-gradient-1678253129442.png);
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+
+  /* background: conic-gradient(
+    from 180deg at 107% 24%,
+    #000000,
+    rgba(54, 111, 85, 1),
+    #000000
+  ); */
 
   display: flex;
   justify-content: center;
