@@ -1,0 +1,23 @@
+.btn {
+  all: unset;
+  font-family: "Nunito Sans", sans-serif;
+  border-radius: 5px;
+  background-color: white;
+  cursor: pointer;
+  padding: 0.25rem 1.5rem;
+  margin: 0;
+  height: 40px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  line-height: 1.25rem;
+  border: 1px solid black;
+  font-weight: bold;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: border-color, background, color, transform, box-shadow;
+  transition-duration: 0.15s;
+  transition-timing-function: ease;
+}

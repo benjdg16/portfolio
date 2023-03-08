@@ -66,6 +66,7 @@ section#home {
 
 .home-container {
   max-width: 1440px;
+  width: 100%;
   margin: 0 auto;
   padding: 0 3rem;
   display: flex;
@@ -110,11 +111,20 @@ section#home {
   color: #d1d1d1;
   font-family: "Nunito Sans", sans-serif;
   font-size: 2rem;
+  display: block;
+  margin-bottom: 3rem;
+
+  /* mq */
+  min-height: 130px;
 }
 
-code.role {
+.hero-subscript .role {
   background-color: black;
   color: #d7ab4c;
+}
+
+.hero-subscript #years {
+  font-weight: bold;
 }
 
 .hero-svg-container {
@@ -165,4 +175,12 @@ svg#react-logo {
 svg#ts-logo {
   top: 27%;
   left: 82%;
+}
+
+/* Special */
+.pdf-download-link {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
