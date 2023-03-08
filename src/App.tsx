@@ -6,10 +6,10 @@ import "./App.css";
 const App = () => {
   return (
     <div className="app">
-      <NavBar />
+      {/* <NavBar /> */}
       <div className="app-container">
         <Section.Home />
-        {/* <div className="section-2" style={{ height: `100vh` }}></div> */}
+        <div className="section-2" style={{ height: `100vh` }}></div>
       </div>
     </div>
   );

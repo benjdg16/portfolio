@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef } from "react";
-import gsap from "gsap";
+import gsap, { Expo } from "gsap";
 import TypeIt from "typeit-react";
+import { FaArrowCircleDown } from "react-icons/fa";
 
 import { ReactComponent as CssLogo } from "../../assets/stack-logos/css.svg";
 import { ReactComponent as HtmlLogo } from "../../assets/stack-logos/html.svg";
@@ -9,6 +10,8 @@ import { ReactComponent as NextLogo } from "../../assets/stack-logos/next.svg";
 import { ReactComponent as NodeLogo } from "../../assets/stack-logos/node.svg";
 import { ReactComponent as ReactLogo } from "../../assets/stack-logos/react.svg";
 import { ReactComponent as TsLogo } from "../../assets/stack-logos/ts.svg";
+import Button from "../../components/Button";
+import resumePDF from "../../assets/files/bien_joseph_de_guzman_resume.pdf";
 
 import "./Home.css";
 
@@ -27,6 +30,9 @@ const Home = () => {
   };
 
   useLayoutEffect(() => {
+    /**
+     * Note: SVG mousemove animation bindings
+     */
     if (homeRef.current) {
       (homeRef.current as HTMLElement).addEventListener(
         "mousemove",
@@ -56,6 +62,25 @@ const Home = () => {
           );
         });
       });
+
+      const homeTl = gsap.timeline({
+        defaults: { duration: 2 },
+      });
+
+      homeTl.fromTo(
+        ".hero-svg",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: Expo.easeOut,
+          stagger: {
+            amount: 1,
+            from: "random",
+          },
+        }
+      );
     }, svgContainerRef);
 
     return () => {
@@ -94,6 +119,18 @@ const Home = () => {
               A {typedHTML()} focusing heavy on front-end technologies. Industry
               experienced in the field for {<span id="years">5 years</span>}.
             </span>
+            <Button onClick={() => console.log("hello")}>
+              <a
+                className="pdf-download-link"
+                target="_blank"
+                rel="noreferrer"
+                href={resumePDF}
+                download="Bien Joseph W. De Guzman - Resume.pdf"
+              >
+                <span style={{ marginRight: "8px" }}>Download resume</span>
+                <FaArrowCircleDown color={"#"} />
+              </a>
+            </Button>
           </div>
           <div className="hero-svg-container" ref={svgContainerRef}>
             <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
