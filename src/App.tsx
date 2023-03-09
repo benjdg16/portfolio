@@ -1,24 +1,66 @@
-import { useLayoutEffect, useRef } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import gsap, { Expo } from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
 import NavBar from "./components/NavBar";
 import * as Section from "./sections";
 import { Home } from "./sections";
 
-import { RefHandler } from "./sections/Home/Home";
+import { THomeRefHandler } from "./sections/Home/Home";
+import { TExperienceHandler } from "./sections/Experience/Experience";
 
 import "./App.css";
 
 const CLASS_HOME_HERO_SVG = ".hero-svg";
 
 const App = () => {
+  const [isExpTLVisible, setIsExpTLVisible] = useState<boolean>(false);
+
   const appRef = useRef<HTMLDivElement>(null);
-  /**
-   * Home
-   */
-  const homeRef = useRef<RefHandler>(null);
+  const homeRef = useRef<THomeRefHandler>(null);
+  const experienceRef = useRef<TExperienceHandler>(null);
 
   useLayoutEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
     const ctx = gsap.context(() => {
+      // gsap.set(".hero-svg", { opacity: 0 });
+      gsap.fromTo(
+        ".hero-svg",
+        {
+          opacity: 0,
+        },
+        {
+          opacity: 1,
+          ease: Expo.easeOut,
+          stagger: {
+            amount: 1,
+            from: "random",
+          },
+          duration: 2,
+        }
+      );
+
+      gsap.to("#experience", {
+        // opacity: 1,
+        // color: "red",
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top center",
+          end: "center bottom",
+          scrub: true,
+          // markers: true,
+          id: "experience",
+          onEnter: () => {
+            setIsExpTLVisible(true);
+            console.log("hey");
+          },
+          onLeave: () => {
+            setIsExpTLVisible(false);
+            console.log(`bye`);
+          },
+        },
+      });
+
       const items = gsap.utils.toArray(".hero-svg").map((element) => {
         return {
           element,
@@ -46,25 +88,6 @@ const App = () => {
           }
         });
       });
-
-      const gsapAppTimeline = gsap.timeline({
-        defaults: { duration: 2 },
-      });
-
-      gsapAppTimeline.fromTo(
-        ".hero-svg",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: Expo.easeOut,
-          stagger: {
-            amount: 1,
-            from: "random",
-          },
-        }
-      );
     }, appRef);
 
     return () => {
@@ -78,7 +101,7 @@ const App = () => {
       <div className="app-noise-overlay" />
       <div className="app-container">
         <Section.Home ref={homeRef} />
-        <Section.Experience />
+        <Section.Experience ref={experienceRef} isExpTLVisible />
         {/* <div
           className="section-2"
           style={{ height: `100vh`, backgroundColor: "pink" }}

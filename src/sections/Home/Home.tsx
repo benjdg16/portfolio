@@ -21,20 +21,20 @@ import resumePDF from "../../assets/files/bien_joseph_de_guzman_resume.pdf";
 
 import "./Home.css";
 
-type Props = {};
+type TProps = {};
 type THomeMouseCoordinates = {
   x: number;
   y: number;
 };
 
-export type RefHandler = {
+export type THomeRefHandler = {
   // pressAlert: () => void;
   // inputRef: RefObject<HTMLInputElement>;
   homeRef: RefObject<HTMLElement>;
   mouseCoordinates: MutableRefObject<THomeMouseCoordinates>;
 };
 
-const Home = forwardRef<RefHandler, Props>((props, ref) => {
+const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
   const homeRef = useRef<HTMLElement>(null);
   const mouseCoordinates = useRef<THomeMouseCoordinates>({
     x: 0,

@@ -1,70 +1,149 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap, { Expo } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import TypeIt from "typeit-react";
-import { FaArrowCircleDown } from "react-icons/fa";
+import React, {
+  forwardRef,
+  RefObject,
+  useState,
+  useRef,
+  useImperativeHandle,
+} from "react";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { FaBriefcase, FaSchool, FaStar } from "react-icons/fa";
 
 import "./Experience.css";
 
-const Experience = () => {
+type TProps = {
+  isExpTLVisible: boolean;
+};
+export type TExperienceHandler = {
+  experienceRef: RefObject<HTMLElement>;
+};
+
+const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
+  const { isExpTLVisible } = props;
+
   const experienceRef = useRef<HTMLElement>(null);
   const experienceCardContainerRef = useRef<HTMLElement>(null);
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      let sections = gsap.utils.toArray(".experience-card");
+  useImperativeHandle(ref, () => ({
+    experienceRef,
+  }));
 
-      if (experienceCardContainerRef.current) {
-        // gsap.to(sections, {
-        //   xPercent: -100 * (sections.length - 1),
-        //   ease: "none",
-        //   scrollTrigger: {
-        //     trigger: ".experience-card-container",
-        //     pin: true,
-        //     scrub: 1,
-        //     snap: 1 / (sections.length - 1),
-        //     end: () => "+=" + experienceCardContainerRef.current?.offsetWidth,
-        //     markers: true,
-        //   },
-        // });
-      }
-
-      // if (experienceRef.current) {
-      //   gsap.fromTo(
-      //     experienceRef.current,
-      //     {
-      //       // opacity: 0,
-      //       // y: -20,
-      //     },
-      //     {
-      //       // opacity: 1,
-      //       // y: 0,
-      //       scrollTrigger: {
-      //         trigger: experienceRef.current,
-      //         start: "top top",
-      //         end: "bottom center",
-      //         scrub: true,
-      //         markers: true,
-      //       },
-      //     }
-      //   );
-      // }
-    });
-
-    return () => {
-      ctx.revert();
-    };
-  }, []);
+  React.useEffect(() => {
+    console.log(isExpTLVisible);
+  }, [isExpTLVisible]);
 
   return (
     <section id="experience" ref={experienceRef}>
-      <div className="experience-card-container">
+      <h1>Experience</h1>
+      <VerticalTimeline animate={isExpTLVisible}>
+        <VerticalTimelineElement
+          visible={true}
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
+          date="2011 - present"
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          icon={<FaBriefcase />}
+        >
+          <h3 className="vertical-timeline-element-title">Creative Director</h3>
+          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
+          <p>
+            Creative Direction, User Experience, Visual Design, Project
+            Management, Team Leading
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="2010 - 2011"
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          icon={<FaBriefcase />}
+        >
+          <h3 className="vertical-timeline-element-title">Art Director</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            San Francisco, CA
+          </h4>
+          <p>
+            Creative Direction, User Experience, Visual Design, SEO, Online
+            Marketing
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="2008 - 2010"
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          icon={<FaBriefcase />}
+        >
+          <h3 className="vertical-timeline-element-title">Web Designer</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Los Angeles, CA
+          </h4>
+          <p>User Experience, Visual Design</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="2006 - 2008"
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          icon={<FaBriefcase />}
+        >
+          <h3 className="vertical-timeline-element-title">Web Designer</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            San Francisco, CA
+          </h4>
+          <p>User Experience, Visual Design</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--education"
+          date="April 2013"
+          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+          icon={<FaSchool />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            Content Marketing for Web, Mobile and Social Media
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
+          <p>Strategy, Social Media</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--education"
+          date="November 2012"
+          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+          icon={<FaSchool />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            Agile Development Scrum Master
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">Certification</h4>
+          <p>Creative Direction, User Experience, Visual Design</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--education"
+          date="2002 - 2006"
+          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
+          icon={<FaSchool />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            Bachelor of Science in Interactive Digital Media Visual Imaging
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Bachelor Degree
+          </h4>
+          <p>Creative Direction, Visual Design</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
+          icon={<FaStar />}
+        />
+      </VerticalTimeline>
+      {/* <div className="experience-card-container">
         <section id="experience1" className="experience-card"></section>
         <section id="experience2" className="experience-card"></section>
         <section id="experience3" className="experience-card"></section>
-      </div>
+      </div> */}
     </section>
   );
-};
+});
 
 export default Experience;
