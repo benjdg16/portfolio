@@ -30,26 +30,26 @@ const Home = () => {
   };
 
   useLayoutEffect(() => {
-    /**
-     * Note: SVG mousemove animation bindings
-     */
-    if (homeRef.current) {
-      (homeRef.current as HTMLElement).addEventListener(
-        "mousemove",
-        handleMouseMove
-      );
-    }
-
-    const items = gsap.utils.toArray(".hero-svg").map((element) => {
-      return {
-        element,
-        transformValue: -50,
-        xSet: gsap.quickSetter(element as SVGSVGElement, "x", "%"),
-        ySet: gsap.quickSetter(element as SVGSVGElement, "y", "%"),
-      };
-    });
-
     const ctx = gsap.context(() => {
+      /**
+       * Note: SVG mousemove animation bindings
+       */
+      if (homeRef.current) {
+        (homeRef.current as HTMLElement).addEventListener(
+          "mousemove",
+          handleMouseMove
+        );
+      }
+
+      const items = gsap.utils.toArray(".hero-svg").map((element) => {
+        return {
+          element,
+          transformValue: -50,
+          xSet: gsap.quickSetter(element as SVGSVGElement, "x", "%"),
+          ySet: gsap.quickSetter(element as SVGSVGElement, "y", "%"),
+        };
+      });
+
       gsap.ticker.add(() => {
         items.forEach((item) => {
           item.xSet(

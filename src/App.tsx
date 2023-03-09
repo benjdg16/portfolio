@@ -7,9 +7,14 @@ const App = () => {
   return (
     <div className="app">
       {/* <NavBar /> */}
+      <div className="app-noise-overlay" />
       <div className="app-container">
         <Section.Home />
-        <div className="section-2" style={{ height: `100vh` }}></div>
+        <Section.Experience />
+        <div
+          className="section-2"
+          style={{ height: `100vh`, backgroundColor: "pink" }}
+        ></div>
       </div>
     </div>
   );

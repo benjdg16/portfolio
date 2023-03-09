@@ -1,0 +1,20 @@
+section#experience {
+  height: 100vh;
+  width: 100%;
+  border: 1px solid blue;
+}
+
+.experience-card {
+  height: 100vh;
+  width: 100vw;
+}
+
+#experience1 {
+  background-color: aqua;
+}
+#experience2 {
+  background-color: rgb(60, 255, 0);
+}
+#experience3 {
+  background-color: rgb(255, 238, 0);
+}
