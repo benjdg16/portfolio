@@ -1,5 +1,11 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap, { Expo } from "gsap";
+import React, {
+  forwardRef,
+  RefObject,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useImperativeHandle,
+} from "react";
 import TypeIt from "typeit-react";
 import { FaArrowCircleDown } from "react-icons/fa";
 
@@ -15,77 +21,46 @@ import resumePDF from "../../assets/files/bien_joseph_de_guzman_resume.pdf";
 
 import "./Home.css";
 
-const Home = () => {
-  const mouseCoordinates = {
+type Props = {};
+type THomeMouseCoordinates = {
+  x: number;
+  y: number;
+};
+
+export type RefHandler = {
+  // pressAlert: () => void;
+  // inputRef: RefObject<HTMLInputElement>;
+  homeRef: RefObject<HTMLElement>;
+  mouseCoordinates: MutableRefObject<THomeMouseCoordinates>;
+};
+
+const Home = forwardRef<RefHandler, Props>((props, ref) => {
+  const homeRef = useRef<HTMLElement>(null);
+  const mouseCoordinates = useRef<THomeMouseCoordinates>({
     x: 0,
     y: 0,
-  };
+  });
 
-  const svgContainerRef = useRef<HTMLDivElement>(null);
-  const homeRef = useRef<HTMLElement>(null);
+  useImperativeHandle(ref, () => ({
+    homeRef,
+    mouseCoordinates,
+  }));
 
   const handleMouseMove = (e: MouseEvent) => {
-    mouseCoordinates.x = e.x;
-    mouseCoordinates.y = e.y;
+    mouseCoordinates.current.x = e.x;
+    mouseCoordinates.current.y = e.y;
   };
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      /**
-       * Note: SVG mousemove animation bindings
-       */
-      if (homeRef.current) {
-        (homeRef.current as HTMLElement).addEventListener(
-          "mousemove",
-          handleMouseMove
-        );
-      }
-
-      const items = gsap.utils.toArray(".hero-svg").map((element) => {
-        return {
-          element,
-          transformValue: -50,
-          xSet: gsap.quickSetter(element as SVGSVGElement, "x", "%"),
-          ySet: gsap.quickSetter(element as SVGSVGElement, "y", "%"),
-        };
-      });
-
-      gsap.ticker.add(() => {
-        items.forEach((item) => {
-          item.xSet(
-            (mouseCoordinates.x - window.innerWidth / 2) / 100 +
-              item.transformValue
-          );
-          item.ySet(
-            (mouseCoordinates.y - window.innerHeight / 2) / 100 +
-              item.transformValue
-          );
-        });
-      });
-
-      const homeTl = gsap.timeline({
-        defaults: { duration: 2 },
-      });
-
-      homeTl.fromTo(
-        ".hero-svg",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: Expo.easeOut,
-          stagger: {
-            amount: 1,
-            from: "random",
-          },
-        }
+  useEffect(() => {
+    if (homeRef.current) {
+      (homeRef.current as HTMLElement).addEventListener(
+        "mousemove",
+        handleMouseMove
       );
-    }, svgContainerRef);
+    }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      ctx.revert();
     };
   }, []);
 
@@ -131,7 +106,7 @@ const Home = () => {
               </a>
             </Button>
           </div>
-          <div className="hero-svg-container" ref={svgContainerRef}>
+          <div className="hero-svg-container">
             <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
             <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
             <JsLogo id="js-logo" className="hero-svg" title="JavaScript logo" />
@@ -152,6 +127,6 @@ const Home = () => {
       </div>
     </section>
   );
-};
+});
 
 export default Home;
