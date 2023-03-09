@@ -125,7 +125,6 @@ const Home = () => {
                 target="_blank"
                 rel="noreferrer"
                 href={resumePDF}
-                download="Bien Joseph W. De Guzman - Resume.pdf"
               >
                 <span style={{ marginRight: "8px" }}>Download resume</span>
                 <FaArrowCircleDown color={"#"} />
