@@ -68,27 +68,27 @@ const App = () => {
         });
       });
 
-      gsap.to("#experience", {
-        backgroundColor: "white",
-        scrollTrigger: {
-          trigger: "#experience",
-          start: "top center",
-          end: "center bottom",
-          scrub: 2,
-          // markers: true,
-          id: "experience",
-          onEnter: () => {
-            // setIsExpTLVisible(true);
-            console.log("hey");
-          },
-          onLeave: () => {
-            // setIsExpTLVisible(false);
-            console.log(`bye`);
-          },
-        },
-        duration: 2,
-        immediateRender: false,
-      });
+      // gsap.to("#experience", {
+      //   backgroundColor: "white",
+      //   scrollTrigger: {
+      //     trigger: "#experience",
+      //     start: "top center",
+      //     end: "center bottom",
+      //     scrub: 2,
+      //     // markers: true,
+      //     id: "experience",
+      //     onEnter: () => {
+      //       // setIsExpTLVisible(true);
+      //       console.log("hey");
+      //     },
+      //     onLeave: () => {
+      //       // setIsExpTLVisible(false);
+      //       console.log(`bye`);
+      //     },
+      //   },
+      //   duration: 2,
+      //   immediateRender: false,
+      // });
     }, appRef);
 
     return () => {

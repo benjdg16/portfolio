@@ -44,9 +44,14 @@
   /* color: white; */
 }
 
+.card > div {
+  box-sizing: border-box;
+}
+
 /* Card Header */
 
 .card-header {
+  height: 140px;
   padding: 36px 24px;
   border-radius: 5px 5px 0 0;
   display: flex;
@@ -66,7 +71,7 @@
 .card-header-right {
   height: 100%;
   background: black;
-  border-radius: 5px;
+  display: flex;
 }
 
 .card-header-application {
@@ -106,6 +111,7 @@ span#duration {
 /* Card Body */
 
 .card-body {
+  height: 240px;
   padding: 0 24px;
   font-family: "Nunito Sans", sans-serif;
 }
@@ -131,6 +137,7 @@ span#duration {
 /* Card Footer */
 
 .card-footer {
+  height: 100px;
   padding: 36px 24px;
   border-radius: 0 0 5px 5px;
 

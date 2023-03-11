@@ -11,7 +11,7 @@ section#home::after {
   background: inherit;
   z-index: -1;
   transform-origin: left top;
-  transform: skewY(175deg);
+  transform: skewY(173deg);
   background-color: white;
 }
 

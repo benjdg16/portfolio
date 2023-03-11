@@ -1,5 +1,5 @@
 section#experience {
-  background-color: white;
+  background-color: black;
   /* background: white; */
   /* background-size: 100% 100%;
   background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
@@ -228,14 +228,17 @@ section#experience {
   z-index: 1;
   width: auto !important;
 
+  width: 80% !important;
+  display: flex;
+  justify-content: center;
+
   /* transform: translate(-50%, -50%); */
 }
 
 .swiper-pagination-bullet {
   border-radius: 0;
-  width: 8px;
+  /* width: 8px; */
   height: 8px;
-  border-radius: 50%;
   line-height: 30px;
   font-size: 12px;
   opacity: 1;
@@ -244,10 +247,12 @@ section#experience {
   margin-right: 8px;
   cursor: pointer;
   transition: all 0.2s;
+
+  flex: 1;
+  border-radius: 24px;
 }
 
 .swiper-pagination-bullet-active {
   background: #ffb200;
-  width: 20px;
   border-radius: 10px;
 }
