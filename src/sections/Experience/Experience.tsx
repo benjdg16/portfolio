@@ -12,6 +12,26 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { FaBriefcase, FaSchool, FaStar } from "react-icons/fa";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow } from "swiper";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/pagination";
+import "swiper/css/effect-coverflow";
+// import "swiper/css/scrollbar";
+
+import SwiperCore, {
+  A11y,
+  Mousewheel,
+  Pagination,
+  Scrollbar,
+  EffectFade,
+  FreeMode,
+  Navigation,
+} from "swiper";
+
+import Card from "../../components/Card";
+
 import "./Experience.css";
 
 type TProps = {
@@ -32,116 +52,80 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
   }));
 
   React.useEffect(() => {
+    // SwiperCore.use([EffectCoverflow, Pagination]);
+
     console.log(isExpTLVisible);
   }, [isExpTLVisible]);
 
   return (
     <section id="experience" ref={experienceRef}>
-      <h1>Experience</h1>
-      <VerticalTimeline animate={isExpTLVisible}>
-        <VerticalTimelineElement
-          visible={true}
-          className="vertical-timeline-element--work"
-          contentStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          contentArrowStyle={{ borderRight: "7px solid  rgb(33, 150, 243)" }}
-          date="2011 - present"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FaBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Creative Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, Project
-            Management, Team Leading
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2010 - 2011"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FaBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Art Director</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
-          <p>
-            Creative Direction, User Experience, Visual Design, SEO, Online
-            Marketing
-          </p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2008 - 2010"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FaBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Los Angeles, CA
-          </h4>
-          <p>User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--work"
-          date="2006 - 2008"
-          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
-          icon={<FaBriefcase />}
-        >
-          <h3 className="vertical-timeline-element-title">Web Designer</h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            San Francisco, CA
-          </h4>
-          <p>User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="April 2013"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<FaSchool />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Content Marketing for Web, Mobile and Social Media
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Online Course</h4>
-          <p>Strategy, Social Media</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="November 2012"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<FaSchool />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Agile Development Scrum Master
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">Certification</h4>
-          <p>Creative Direction, User Experience, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="2002 - 2006"
-          iconStyle={{ background: "rgb(233, 30, 99)", color: "#fff" }}
-          icon={<FaSchool />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Bachelor of Science in Interactive Digital Media Visual Imaging
-          </h3>
-          <h4 className="vertical-timeline-element-subtitle">
-            Bachelor Degree
-          </h4>
-          <p>Creative Direction, Visual Design</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          iconStyle={{ background: "rgb(16, 204, 82)", color: "#fff" }}
-          icon={<FaStar />}
-        />
-      </VerticalTimeline>
-      {/* <div className="experience-card-container">
-        <section id="experience1" className="experience-card"></section>
-        <section id="experience2" className="experience-card"></section>
-        <section id="experience3" className="experience-card"></section>
-      </div> */}
+      <div className="experience-container">
+        <div className="experience-title">
+          <h1>experience</h1>
+        </div>
+        {/* <Card /> */}
+        <div className="swiper-flex-container">
+          <div className="swiper-container">
+            <Swiper
+              className="experience-swiper"
+              // modules={[EffectCoverflow]}
+              modules={[
+                A11y,
+                // EffectCoverflow,
+                Mousewheel,
+                Pagination,
+                // Scrollbar,
+                // EffectFade,
+                FreeMode,
+              ]}
+              // effect="fade"
+              // effect="fade"
+              // freeMode={true}
+              pagination={{
+                clickable: true,
+              }}
+              // scrollbar={{ draggable: true }}
+              grabCursor={true}
+              centeredSlides={true}
+              slidesPerView={3}
+              spaceBetween={0}
+              // coverflowEffect={{
+              //   depth: 10,
+              //   modifier: 1,
+              //   rotate: 50,
+              //   scale: 1,
+              //   stretch: 0,
+              // }}
+              // navigation={{
+              //   enabled: true,
+              // }}
+              loop={true}
+              // autoHeight={true}
+              // onSlideChange={() => console.log("slide change")}
+              // onSwiper={(swiper) => console.log(swiper)}
+            >
+              <SwiperSlide>
+                <Card />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card />
+              </SwiperSlide>
+              <SwiperSlide>
+                <Card />
+              </SwiperSlide>
+            </Swiper>
+          </div>
+        </div>
+      </div>
     </section>
   );
 });

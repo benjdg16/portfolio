@@ -102,10 +102,10 @@ const App = () => {
       <div className="app-container">
         <Section.Home ref={homeRef} />
         <Section.Experience ref={experienceRef} isExpTLVisible />
-        {/* <div
+        <div
           className="section-2"
           style={{ height: `100vh`, backgroundColor: "pink" }}
-        ></div> */}
+        ></div>
       </div>
     </div>
   );
