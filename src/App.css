@@ -1,10 +1,3 @@
-.app-noise-overlay {
-  height: 100%;
-  background: linear-gradient(20deg, rebeccapurple, transparent);
-  background-image: url(/src/assets/noise.svg);
-  filter: contrast(170%) brightness(1000%);
-}
-
 .app-container {
   background: conic-gradient(
     from 230deg at 107% 24%,
@@ -13,23 +6,4 @@
     #000000
   );
   mix-blend-mode: multiply;
-
-  /* background-size: 100% 100%;
-  background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px,
-    0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
-  background-image: radial-gradient(
-      18% 28% at 24% 50%,
-      #153638ff 7%,
-      #073aff00 100%
-    ),
-    radial-gradient(18% 28% at 18% 71%, #a47d7d59 6%, #073aff00 100%),
-    radial-gradient(70% 53% at 36% 76%, #000000ff 0%, #073aff00 100%),
-    radial-gradient(42% 53% at 15% 94%, #000000ff 7%, #073aff00 100%),
-    radial-gradient(42% 53% at 34% 72%, #000000ff 7%, #073aff00 100%),
-    radial-gradient(18% 28% at 35% 87%, #000000ff 7%, #073aff00 100%),
-    radial-gradient(31% 43% at 7% 98%, #000000ff 24%, #073aff00 100%),
-    radial-gradient(21% 37% at 72% 23%, #f53d3d38 24%, #073aff00 100%),
-    radial-gradient(35% 56% at 91% 74%, #221347f5 9%, #073aff00 100%),
-    radial-gradient(74% 86% at 67% 38%, #417c5df5 24%, #073aff00 100%),
-    linear-gradient(125deg, #000000ff 1%, #6e2121ff 100%); */
 }

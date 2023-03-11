@@ -28,8 +28,6 @@ type THomeMouseCoordinates = {
 };
 
 export type THomeRefHandler = {
-  // pressAlert: () => void;
-  // inputRef: RefObject<HTMLInputElement>;
   homeRef: RefObject<HTMLElement>;
   mouseCoordinates: MutableRefObject<THomeMouseCoordinates>;
 };

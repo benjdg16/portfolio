@@ -1,7 +1,6 @@
 import { useState, useRef, useLayoutEffect } from "react";
 import gsap, { Expo } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
-import NavBar from "./components/NavBar";
 import * as Section from "./sections";
 import { Home } from "./sections";
 
@@ -23,7 +22,6 @@ const App = () => {
     gsap.registerPlugin(ScrollTrigger);
 
     const ctx = gsap.context(() => {
-      // gsap.set(".hero-svg", { opacity: 0 });
       gsap.fromTo(
         ".hero-svg",
         {
@@ -98,8 +96,6 @@ const App = () => {
 
   return (
     <div className="app" ref={appRef}>
-      {/* <NavBar /> */}
-      <div className="app-noise-overlay" />
       <div className="app-container">
         <Section.Home ref={homeRef} />
         <Section.Experience ref={experienceRef} isExpTLVisible />
