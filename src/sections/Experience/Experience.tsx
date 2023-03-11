@@ -59,6 +59,7 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
 
   return (
     <section id="experience" ref={experienceRef}>
+      {/* <Card /> */}
       <div className="experience-container">
         <div className="experience-title">
           <h1>experience</h1>

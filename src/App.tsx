@@ -40,27 +40,6 @@ const App = () => {
         }
       );
 
-      gsap.to("#experience", {
-        // opacity: 1,
-        // color: "red",
-        scrollTrigger: {
-          trigger: "#experience",
-          start: "top center",
-          end: "center bottom",
-          scrub: true,
-          // markers: true,
-          id: "experience",
-          onEnter: () => {
-            setIsExpTLVisible(true);
-            console.log("hey");
-          },
-          onLeave: () => {
-            setIsExpTLVisible(false);
-            console.log(`bye`);
-          },
-        },
-      });
-
       const items = gsap.utils.toArray(".hero-svg").map((element) => {
         return {
           element,
@@ -88,6 +67,28 @@ const App = () => {
           }
         });
       });
+
+      gsap.to("#experience", {
+        backgroundColor: "white",
+        scrollTrigger: {
+          trigger: "#experience",
+          start: "top center",
+          end: "center bottom",
+          scrub: 2,
+          // markers: true,
+          id: "experience",
+          onEnter: () => {
+            // setIsExpTLVisible(true);
+            console.log("hey");
+          },
+          onLeave: () => {
+            // setIsExpTLVisible(false);
+            console.log(`bye`);
+          },
+        },
+        duration: 2,
+        immediateRender: false,
+      });
     }, appRef);
 
     return () => {
@@ -102,10 +103,8 @@ const App = () => {
       <div className="app-container">
         <Section.Home ref={homeRef} />
         <Section.Experience ref={experienceRef} isExpTLVisible />
-        <div
-          className="section-2"
-          style={{ height: `100vh`, backgroundColor: "pink" }}
-        ></div>
+        <div className="section-2" style={{ height: `100vh` }}></div>
+        {/* <Section.Home /> */}
       </div>
     </div>
   );

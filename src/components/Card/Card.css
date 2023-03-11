@@ -8,7 +8,7 @@
   /* position: absolute; */
   /* height: 400px; */
   width: 400px;
-  border-radius: 5px;
+  border-radius: 16px;
   /* box-shadow: 8px 3px 30px 7px rgb(96 86 86 / 97%); */
 
   /* padding: 24px; */
@@ -26,7 +26,7 @@
   backdrop-filter: blur(15px); */
 
   background-color: rgba(255, 255, 255, 0.4);
-  border-radius: 5px;
+  /* border-radius: 5px; */
   box-shadow: 0px 0 31px 0px rgb(0 0 0 / 10%);
   backdrop-filter: blur(15px);
   border: 1px solid rgba(255, 255, 255, 0.5);

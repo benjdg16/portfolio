@@ -3,6 +3,18 @@ section#home {
   width: 100%;
 }
 
+section#home::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  transform-origin: left top;
+  transform: skewY(175deg);
+  background-color: white;
+}
+
 .home-bg {
   height: 100%;
   width: 100%;
