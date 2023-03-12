@@ -105,21 +105,31 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
             </Button>
           </div>
           <div className="hero-svg-container">
-            <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
-            <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
-            <JsLogo id="js-logo" className="hero-svg" title="JavaScript logo" />
-            <NextLogo
-              id="next-logo"
-              className="hero-svg"
-              title="Next.js logo"
-            />
-            <NodeLogo id="node-logo" className="hero-svg" title="Node logo" />
-            <ReactLogo
-              id="react-logo"
-              className="hero-svg"
-              title="React.js logo"
-            />
-            <TsLogo id="ts-logo" className="hero-svg" title="TypeScript logo" />
+            <div className="hero-svg-relative-container">
+              <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
+              <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
+              <JsLogo
+                id="js-logo"
+                className="hero-svg"
+                title="JavaScript logo"
+              />
+              <NodeLogo id="node-logo" className="hero-svg" title="Node logo" />
+              <TsLogo
+                id="ts-logo"
+                className="hero-svg"
+                title="TypeScript logo"
+              />
+              <NextLogo
+                id="next-logo"
+                className="hero-svg"
+                title="Next.js logo"
+              />
+              <ReactLogo
+                id="react-logo"
+                className="hero-svg"
+                title="React.js logo"
+              />
+            </div>
           </div>
         </div>
       </div>
