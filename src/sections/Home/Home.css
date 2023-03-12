@@ -1,72 +1,23 @@
-.ahome-container {
-  position: relative;
-  height: 100vh;
-  width: 100%;
-  /* border: solid 1px red; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
-}
-
-.ahome {
-  height: 100vh;
-  background-image: url(/src/assets/gradient-bg.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.ahome-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-/* .home-container {
-  min-height: 100%;
-  height: 100%;
-  height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-.home {
-  height: 110%;
-  width: 110%;
-  top: 0;
-  left: 0;
-  position: absolute;
-  background-image: url(/src/assets/gradient-bg.svg);
-  background-size: cover;
-  background-repeat: no-repeat;
-} */
-
-/* .home-container {
-  height: 100vh;
-  width: 100%;
-} */
-
 section#home {
   height: 100vh;
   width: 100%;
 }
 
+section#home::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  transform-origin: left top;
+  transform: skewY(173deg);
+  background-color: white;
+}
+
 .home-bg {
   height: 100%;
   width: 100%;
-  /* background-image: url(/src/assets/gradient-bg.svg); */
-  /* background-image: url(/src/assets/magicpattern-mesh-gradient-1678253129442.png);
-  background-size: cover;
-  background-repeat: no-repeat; */
-
-  /* background: conic-gradient(
-    from 180deg at 107% 24%,
-    #000000,
-    rgba(54, 111, 85, 1),
-    #000000
-  ); */
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,24 +25,30 @@ section#home {
 
 .home-container {
   max-width: 1440px;
+  height: 100%;
   width: 100%;
   margin: 0 auto;
-  padding: 0 3rem;
+  padding: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  /* gap: 2rem; */
 }
 
 .hero-text-container {
-  flex: 1 1 50%;
-  min-width: 50%;
+  /* flex: 1 0 50%; */
+  /* min-width: 50%; */
+  margin: 2rem 0;
 }
 
 .hero-superscript {
   color: white;
   font-family: "Poppins", sans-serif;
-  font-size: 2.25rem;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
+  display: inline-block;
+  /* font-size: 2.25rem; */
 }
 
 .hero-text {
@@ -100,7 +57,11 @@ section#home {
 }
 
 .hero-text h1 {
-  font-size: 5.25rem;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 2rem;
+
+  /* font-size: 5.25rem; */
 }
 
 .hero-text #name {
@@ -112,15 +73,15 @@ section#home {
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  /* font-weight: 700; */
 }
 
 .hero-subscript {
   color: #d1d1d1;
   font-family: "Nunito Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 1.25rem;
+  /* font-size: 2rem; */
   display: block;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 
   /* mq */
   min-height: 130px;
@@ -136,53 +97,101 @@ section#home {
 }
 
 .hero-svg-container {
-  flex: 1 1 50%;
-  min-width: 50%;
+  width: 100%;
+  /* background: red; */
+  /* height: 30vh; */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  height: 32rem;
 }
 
-.hero-svg-container svg {
+.hero-svg-relative-container {
+  /* flex: 1 1 50%; */
+  min-width: 50%;
+  /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  position: relative;
+  /* height: 32rem; */
+
+  height: 256px;
+  width: 100%;
+  /* max-width: 100vw; */
+}
+
+.hero-svg-relative-container svg {
   position: absolute;
   transform: translate(-50%, -50%);
 }
 
 svg#css-logo {
+  height: 116px;
+  width: 116px;
+  left: 57%;
+  top: 14%;
+  /* 
   left: 54%;
-  top: 11%;
+  top: 11%; */
 }
 
 svg#html-logo {
-  top: 28%;
-  left: 32%;
+  height: 132.5px;
+  width: 132.5px;
+  top: 32%;
+  left: 30%;
+
+  /* top: 28%;
+  left: 32%; */
 }
 
 svg#js-logo {
-  top: 76%;
-  left: 27%;
-}
+  height: 189px;
+  width: 189px;
+  top: 73%;
+  left: 24%;
 
-svg#next-logo {
-  top: 93%;
-  left: 66%;
+  /* top: 76%;
+  left: 27%; */
 }
 
 svg#node-logo {
-  top: 65%;
-  left: 86%;
-}
+  height: 140.5px;
+  width: 140.5px;
+  top: 71%;
+  left: 84%;
 
-svg#react-logo {
-  left: 57%;
-  top: 50%;
+  /* top: 65%;
+  left: 86%; */
 }
 
 svg#ts-logo {
-  top: 27%;
-  left: 82%;
+  height: 141.5px;
+  width: 141.5px;
+  top: 35%;
+  left: 85%;
+
+  /* top: 27%;
+  left: 82%; */
+}
+
+svg#next-logo {
+  height: 156.6px;
+  width: 156.5px;
+  top: 96%;
+  left: 57%;
+
+  /* top: 93%;
+  left: 66%; */
+}
+
+svg#react-logo {
+  height: 191px;
+  width: 191px;
+  left: 58%;
+  top: 52%;
+  /* 
+  left: 57%;
+  top: 50%; */
 }
 
 /* Special */
@@ -191,4 +200,179 @@ svg#ts-logo {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width: 320px) {
+  .home-container {
+    /* flex-direction: column; */
+  }
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width: 481px) {
+  .hero-superscript {
+    font-size: 2rem;
+  }
+
+  .hero-text h1 {
+    font-size: 4.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-subscript {
+    min-height: 0;
+    margin-bottom: 2rem;
+    width: 70%;
+  }
+
+  svg#css-logo {
+    height: 139px;
+    width: 139px;
+    left: 66%;
+    top: 0%;
+  }
+
+  svg#html-logo {
+    height: 159px;
+    width: 159px;
+    top: 22%;
+    left: 52%;
+  }
+
+  svg#js-logo {
+    height: 226.8px;
+    width: 226.8px;
+    top: 72%;
+    left: 49%;
+  }
+
+  svg#node-logo {
+    height: 168.6px;
+    width: 168.6px;
+    top: 64%;
+    left: 85%;
+  }
+
+  svg#ts-logo {
+    height: 169.8px;
+    width: 169.8px;
+    top: 18%;
+    left: 83%;
+  }
+
+  svg#next-logo {
+    height: 187.8px;
+    width: 187.8px;
+    top: 101%;
+    left: 68%;
+  }
+
+  svg#react-logo {
+    height: 229.2px;
+    width: 229.2px;
+    left: 68%;
+    top: 48%;
+  }
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width: 641px) {
+  /* .hero-svg-relative-container {
+    background-color: red;
+  } */
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width: 961px) {
+  .home-container {
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1440px;
+    padding: 0 3rem;
+  }
+
+  .hero-text-container,
+  .hero-svg-container {
+    margin: 0;
+    flex: 1 1 50%;
+    min-width: 50%;
+  }
+
+  .hero-superscript {
+    font-size: 2.25rem;
+  }
+
+  .hero-text h1 {
+    font-size: 5.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-subscript {
+    font-size: 2rem;
+    width: 100%;
+  }
+
+  .hero-svg-relative-container {
+    height: 32rem;
+  }
+
+  svg#css-logo {
+    height: 232px;
+    width: 232px;
+    left: 54%;
+    top: 11%;
+  }
+
+  svg#html-logo {
+    height: 265px;
+    width: 265px;
+    top: 28%;
+    left: 32%;
+  }
+
+  svg#js-logo {
+    height: 378px;
+    width: 378px;
+    top: 76%;
+    left: 27%;
+  }
+
+  svg#node-logo {
+    height: 281px;
+    width: 281px;
+    top: 65%;
+    left: 86%;
+  }
+
+  svg#ts-logo {
+    height: 283px;
+    width: 283px;
+    top: 27%;
+    left: 82%;
+  }
+
+  svg#next-logo {
+    height: 313px;
+    width: 313px;
+    top: 93%;
+    left: 66%;
+  }
+
+  svg#react-logo {
+    height: 382px;
+    width: 382px;
+    left: 57%;
+    top: 50%;
+  }
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width: 1025px) {
+}
+
+/* hi-res laptops and desktops */
+@media (min-width: 1281px) {
 }

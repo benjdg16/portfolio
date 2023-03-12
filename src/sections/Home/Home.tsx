@@ -1,5 +1,11 @@
-import { useLayoutEffect, useRef } from "react";
-import gsap, { Expo } from "gsap";
+import React, {
+  forwardRef,
+  RefObject,
+  MutableRefObject,
+  useEffect,
+  useRef,
+  useImperativeHandle,
+} from "react";
 import TypeIt from "typeit-react";
 import { FaArrowCircleDown } from "react-icons/fa";
 
@@ -15,24 +21,35 @@ import resumePDF from "../../assets/files/bien_joseph_de_guzman_resume.pdf";
 
 import "./Home.css";
 
-const Home = () => {
-  const mouseCoordinates = {
+type TProps = {};
+type THomeMouseCoordinates = {
+  x: number;
+  y: number;
+};
+
+export type THomeRefHandler = {
+  homeRef: RefObject<HTMLElement>;
+  mouseCoordinates: MutableRefObject<THomeMouseCoordinates>;
+};
+
+const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
+  const homeRef = useRef<HTMLElement>(null);
+  const mouseCoordinates = useRef<THomeMouseCoordinates>({
     x: 0,
     y: 0,
-  };
+  });
 
-  const svgContainerRef = useRef<HTMLDivElement>(null);
-  const homeRef = useRef<HTMLElement>(null);
+  useImperativeHandle(ref, () => ({
+    homeRef,
+    mouseCoordinates,
+  }));
 
   const handleMouseMove = (e: MouseEvent) => {
-    mouseCoordinates.x = e.x;
-    mouseCoordinates.y = e.y;
+    mouseCoordinates.current.x = e.x;
+    mouseCoordinates.current.y = e.y;
   };
 
-  useLayoutEffect(() => {
-    /**
-     * Note: SVG mousemove animation bindings
-     */
+  useEffect(() => {
     if (homeRef.current) {
       (homeRef.current as HTMLElement).addEventListener(
         "mousemove",
@@ -40,52 +57,8 @@ const Home = () => {
       );
     }
 
-    const items = gsap.utils.toArray(".hero-svg").map((element) => {
-      return {
-        element,
-        transformValue: -50,
-        xSet: gsap.quickSetter(element as SVGSVGElement, "x", "%"),
-        ySet: gsap.quickSetter(element as SVGSVGElement, "y", "%"),
-      };
-    });
-
-    const ctx = gsap.context(() => {
-      gsap.ticker.add(() => {
-        items.forEach((item) => {
-          item.xSet(
-            (mouseCoordinates.x - window.innerWidth / 2) / 100 +
-              item.transformValue
-          );
-          item.ySet(
-            (mouseCoordinates.y - window.innerHeight / 2) / 100 +
-              item.transformValue
-          );
-        });
-      });
-
-      const homeTl = gsap.timeline({
-        defaults: { duration: 2 },
-      });
-
-      homeTl.fromTo(
-        ".hero-svg",
-        {
-          opacity: 0,
-        },
-        {
-          opacity: 1,
-          ease: Expo.easeOut,
-          stagger: {
-            amount: 1,
-            from: "random",
-          },
-        }
-      );
-    }, svgContainerRef);
-
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      ctx.revert();
     };
   }, []);
 
@@ -125,34 +98,43 @@ const Home = () => {
                 target="_blank"
                 rel="noreferrer"
                 href={resumePDF}
-                download="Bien Joseph W. De Guzman - Resume.pdf"
               >
                 <span style={{ marginRight: "8px" }}>Download resume</span>
                 <FaArrowCircleDown color={"#"} />
               </a>
             </Button>
           </div>
-          <div className="hero-svg-container" ref={svgContainerRef}>
-            <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
-            <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
-            <JsLogo id="js-logo" className="hero-svg" title="JavaScript logo" />
-            <NextLogo
-              id="next-logo"
-              className="hero-svg"
-              title="Next.js logo"
-            />
-            <NodeLogo id="node-logo" className="hero-svg" title="Node logo" />
-            <ReactLogo
-              id="react-logo"
-              className="hero-svg"
-              title="React.js logo"
-            />
-            <TsLogo id="ts-logo" className="hero-svg" title="TypeScript logo" />
+          <div className="hero-svg-container">
+            <div className="hero-svg-relative-container">
+              <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
+              <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
+              <JsLogo
+                id="js-logo"
+                className="hero-svg"
+                title="JavaScript logo"
+              />
+              <NodeLogo id="node-logo" className="hero-svg" title="Node logo" />
+              <TsLogo
+                id="ts-logo"
+                className="hero-svg"
+                title="TypeScript logo"
+              />
+              <NextLogo
+                id="next-logo"
+                className="hero-svg"
+                title="Next.js logo"
+              />
+              <ReactLogo
+                id="react-logo"
+                className="hero-svg"
+                title="React.js logo"
+              />
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
+});
 
 export default Home;

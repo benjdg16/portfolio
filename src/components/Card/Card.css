@@ -1,0 +1,110 @@
+.card {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 400px;
+  background-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0px 0 31px 0px rgb(0 0 0 / 10%);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card > div {
+  box-sizing: border-box;
+}
+
+/* Card Header */
+
+.card-header {
+  height: 140px;
+  padding: 2.25rem 1.5rem;
+  border-radius: 5px 5px 0 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-header-left {
+  flex: 1 0 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-header-right {
+  height: 100%;
+  background: black;
+  display: flex;
+}
+
+.card-header-application {
+  font-size: 1.75rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+}
+
+.card-header-company {
+  font-size: 1rem;
+}
+
+.card-header-date {
+  color: white;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.card-header-date span {
+  display: flex;
+  align-items: center;
+}
+
+span#date {
+  font-size: 1rem;
+}
+
+span#duration {
+  font-size: 0.8rem;
+}
+
+/* Card Body */
+
+.card-body {
+  height: 240px;
+  padding: 0 1.5rem;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.card-body-titles {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.card-body-description-ul {
+  all: unset;
+  font-size: 1rem;
+}
+
+.card-body-description-ul > li {
+  all: unset;
+  margin-bottom: 0.25rem;
+  display: inline-block;
+}
+
+/* Card Footer */
+
+.card-footer {
+  height: 100px;
+  padding: 2.25rem 1.5rem;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
