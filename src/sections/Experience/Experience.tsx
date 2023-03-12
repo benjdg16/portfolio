@@ -18,6 +18,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/effect-coverflow";
+import "../../styles/swiper-custom.css";
 // import "swiper/css/scrollbar";
 
 import SwiperCore, {
@@ -90,6 +91,7 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
               centeredSlides={true}
               slidesPerView={1}
               spaceBetween={0}
+              autoplay={true}
               // coverflowEffect={{
               //   depth: 10,
               //   modifier: 1,

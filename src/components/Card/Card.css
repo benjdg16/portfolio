@@ -116,3 +116,13 @@ span#duration {
   flex-wrap: wrap;
   gap: 8px;
 }
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width: 961px) {
+  .card {
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
