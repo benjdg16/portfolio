@@ -1,6 +1,7 @@
 section#home {
   height: 100vh;
   width: 100%;
+  /* background-color: red; */
 }
 
 section#home::after {
@@ -66,11 +67,7 @@ section#home::after {
 
 .hero-text #name {
   background: rgb(255, 74, 74);
-  background: linear-gradient(
-    160deg,
-    rgba(255, 74, 74, 1) 0%,
-    rgba(255, 211, 57, 1) 100%
-  );
+  background: linear-gradient(160deg, #ff4a4a 0%, #ffd339 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -94,6 +91,37 @@ section#home::after {
 
 .hero-subscript #years {
   font-weight: bold;
+}
+
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+
+.btn-container button {
+  /* box-sizing: border-box; */
+  border: 0;
+}
+
+#btn-download {
+  border-radius: 5px 0 0 5px;
+  /* padding: 0.25rem 0 0.25rem 1.5rem; */
+}
+
+#btn-download:hover {
+  background-color: black;
+  color: white;
+}
+
+#btn-new-tab {
+  border-radius: 0 5px 5px 0;
+  background-color: black;
+  color: white;
+}
+
+#btn-new-tab:hover {
+  background-color: white;
+  color: black;
 }
 
 .hero-svg-container {

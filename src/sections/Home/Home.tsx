@@ -7,7 +7,16 @@ import React, {
   useImperativeHandle,
 } from "react";
 import TypeIt from "typeit-react";
-import { FaArrowCircleDown } from "react-icons/fa";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+// import fa358
+
+import {
+  faCircleArrowDown,
+  faArrowUpRightFromSquare,
+} from "@fortawesome/free-solid-svg-icons";
+
+// import { FaArrowCircleDown } from "react-icons/fa";
 
 import { ReactComponent as CssLogo } from "../../assets/stack-logos/css.svg";
 import { ReactComponent as HtmlLogo } from "../../assets/stack-logos/html.svg";
@@ -92,17 +101,28 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
               A {typedHTML()} focusing heavy on front-end technologies. Industry
               experienced in the field for {<span id="years">5 years</span>}.
             </span>
-            <Button onClick={() => console.log("hello")}>
-              <a
-                className="pdf-download-link"
-                target="_blank"
-                rel="noreferrer"
-                href={resumePDF}
-              >
-                <span style={{ marginRight: "8px" }}>Download resume</span>
-                <FaArrowCircleDown color={"#"} />
-              </a>
-            </Button>
+            <div className="btn-container">
+              <Button id="btn-download">
+                <a
+                  className="pdf-download-link"
+                  download={"bien_joseph_de_guzman_resume.pdf"}
+                  href={resumePDF}
+                >
+                  <span style={{ marginRight: "8px" }}>Download resume</span>
+                  <FontAwesomeIcon icon={faCircleArrowDown} />
+                </a>
+              </Button>
+              <Button id="btn-new-tab">
+                <a
+                  className="pdf-download-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  href={resumePDF}
+                >
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+                </a>
+              </Button>
+            </div>
           </div>
           <div className="hero-svg-container">
             <div className="hero-svg-relative-container">
