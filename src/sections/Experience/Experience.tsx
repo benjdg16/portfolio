@@ -85,11 +85,11 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
     experienceRef,
   }));
 
-  React.useEffect(() => {
-    // SwiperCore.use([EffectCoverflow, Pagination]);
+  // React.useEffect(() => {
+  //   // SwiperCore.use([EffectCoverflow, Pagination]);
 
-    console.log(isExpTLVisible);
-  }, [isExpTLVisible]);
+  //   console.log(isExpTLVisible);
+  // }, [isExpTLVisible]);
 
   return (
     <section id="experience" ref={experienceRef}>

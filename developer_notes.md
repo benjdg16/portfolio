@@ -26,12 +26,24 @@
 
 ## Should have
 
-- [ ]
+- [ ] Update hero text
+- [ ] Cleanup
+  - [ ] Remove unused packages
+  - [ ] Remove comments
+  - [ ] Remove unsued code
+  - [ ] Remove unused assets
+  - [ ] Remove unused styling classes
+- [ ] Thumbnail
+- [ ] Update `index.html`
+- [ ] Update icon
 
 ## Could have
 
 - [ ] Dark mode
   - [ ] System settings theme
+- [ ] Cursor animation
+- [ ] Scroll indicator
+- [ ] Analytics
 
 ## Would have
 
@@ -39,8 +51,10 @@
 
 ## Bugs
 
-- [ ] New tab icon not working when clicking outside the icon.
+- [x] Buttons not working as intended when clicking outside link tags.
+- [ ] Navigation buttons interfering with text visibility when viewing on smaller screens.
 - [ ] Background image not displaying as intended.
+- [ ] Years indicator not following intended UI design.
 
 ## Notes
 
