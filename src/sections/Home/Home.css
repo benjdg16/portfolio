@@ -1,6 +1,7 @@
 section#home {
   height: 100vh;
   width: 100%;
+  /* background-color: red; */
 }
 
 section#home::after {
@@ -313,6 +314,37 @@ svg#react-logo {
   .hero-subscript {
     font-size: 2rem;
     width: 100%;
+  }
+
+  .btn-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-container button {
+    /* box-sizing: border-box; */
+    border: 0;
+  }
+
+  #btn-download {
+    border-radius: 5px 0 0 5px;
+    /* padding: 0.25rem 0 0.25rem 1.5rem; */
+  }
+
+  #btn-download:hover {
+    background-color: black;
+    color: white;
+  }
+
+  #btn-new-tab {
+    border-radius: 0 5px 5px 0;
+    background-color: black;
+    color: white;
+  }
+
+  #btn-new-tab:hover {
+    background-color: white;
+    color: black;
   }
 
   .hero-svg-relative-container {
