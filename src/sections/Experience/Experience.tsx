@@ -17,9 +17,13 @@ import { EffectCoverflow } from "swiper";
 import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import "swiper/css/effect-coverflow";
 import "../../styles/swiper-custom.css";
 // import "swiper/css/scrollbar";
+
+import { TOOLS } from "../../constants";
+import { ICard } from "../../components/Card/Card";
 
 import SwiperCore, {
   A11y,
@@ -41,6 +45,23 @@ type TProps = {
 export type TExperienceHandler = {
   experienceRef: RefObject<HTMLElement>;
 };
+
+const cardArray: ICard[] = [
+  {
+    application: "X",
+    company: "X",
+    date: "X",
+    // duration: "1 year",
+    titles: ["Front end developer / Designer"],
+    description: [
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "Duis volutpat leo vitae nisl euismod tincidunt.",
+      "Fusce tempor mauris sit amet mi convallis, a bibendum libero egestas.",
+      "Integer pharetra pellentesque risus, non porttitor eros commodo at.",
+    ],
+    chips: [TOOLS.AZURE, TOOLS.REACT],
+  },
+];
 
 const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
   const { isExpTLVisible } = props;
@@ -79,6 +100,7 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
                 // Scrollbar,
                 // EffectFade,
                 FreeMode,
+                Navigation,
               ]}
               // effect="fade"
               // effect="fade"
@@ -99,9 +121,7 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
               //   scale: 1,
               //   stretch: 0,
               // }}
-              // navigation={{
-              //   enabled: true,
-              // }}
+              navigation
               loop={true}
               // autoHeight={true}
               // onSlideChange={() => console.log("slide change")}
@@ -126,22 +146,22 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
               }}
             >
               <SwiperSlide>
-                <Card />
+                <Card {...cardArray[0]} />
               </SwiperSlide>
               <SwiperSlide>
-                <Card />
+                <Card {...cardArray[0]} />
               </SwiperSlide>
               <SwiperSlide>
-                <Card />
+                <Card {...cardArray[0]} />
               </SwiperSlide>
               <SwiperSlide>
-                <Card />
+                <Card {...cardArray[0]} />
               </SwiperSlide>
               <SwiperSlide>
-                <Card />
+                <Card {...cardArray[0]} />
               </SwiperSlide>
               <SwiperSlide>
-                <Card />
+                <Card {...cardArray[0]} />
               </SwiperSlide>
             </Swiper>
           </div>

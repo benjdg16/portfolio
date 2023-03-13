@@ -128,3 +128,23 @@
   background: #ffb200;
   border-radius: 10px;
 }
+
+.swiper-button-prev {
+  background-image: url("../assets/circle-chevron-left-solid.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-prev::after {
+  display: none;
+}
+
+.swiper-button-next {
+  background-image: url("../assets/circle-chevron-right-solid.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.swiper-button-next::after {
+  display: none;
+}

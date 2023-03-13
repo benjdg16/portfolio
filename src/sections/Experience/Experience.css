@@ -54,6 +54,10 @@ section#experience {
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 961px) {
+  .experience-container {
+    padding: 2rem 0;
+  }
+
   .experience-title h1 {
     font-size: 4rem;
   }
