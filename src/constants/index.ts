@@ -52,6 +52,26 @@ const TOOLS: { [key: string]: TTool } = {
     key: "jquery",
     value: "jQuery",
   },
+  GSAP: {
+    key: "gsap",
+    value: "GSAP",
+  },
+  BLUE_PRISM: {
+    key: "bluePrism",
+    value: "Blue Prism",
+  },
+  WORDPRESS: {
+    key: "wordpress",
+    value: "WordPress",
+  },
+  ASP: {
+    key: "asp",
+    value: "ASP.NET",
+  },
+  ANGULARJS: {
+    key: "angularjs",
+    value: "AngularJS",
+  },
 };
 
 export { TOOLS };

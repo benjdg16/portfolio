@@ -109,7 +109,7 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
                   href={resumePDF}
                 >
                   <span style={{ marginRight: "8px" }}>Download resume</span>
-                  <FontAwesomeIcon icon={faCircleArrowDown as IconProp} />
+                  <FontAwesomeIcon icon={faCircleArrowDown} />
                 </a>
               </Button>
               <Button id="btn-new-tab">
@@ -119,9 +119,7 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
                   rel="noreferrer"
                   href={resumePDF}
                 >
-                  <FontAwesomeIcon
-                    icon={faArrowUpRightFromSquare as IconProp}
-                  />
+                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
                 </a>
               </Button>
             </div>

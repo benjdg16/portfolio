@@ -38,6 +38,11 @@ section#experience {
   font-size: 2.5rem;
 }
 
+.experience-subtitle p {
+  margin: 0;
+  color: #3a3a3a;
+}
+
 .experience-card {
   height: 100vh;
 }

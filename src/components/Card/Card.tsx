@@ -63,7 +63,7 @@ const Card = ({
       </div>
       <div className="card-footer">
         {chips.map((chip, index) => (
-          <Chip type={chip} />
+          <Chip key={index} type={chip} />
         ))}
         {/* <Chip />
         <Chip />

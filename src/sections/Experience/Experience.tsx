@@ -12,9 +12,19 @@ import {
 import "react-vertical-timeline-component/style.min.css";
 import { FaBriefcase, FaSchool, FaStar } from "react-icons/fa";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faCircleChevronLeft,
+  faCircleChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { EffectCoverflow } from "swiper";
 import "swiper/css";
+import "swiper/css/autoplay";
 import "swiper/css/free-mode";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -27,6 +37,7 @@ import { ICard } from "../../components/Card/Card";
 
 import SwiperCore, {
   A11y,
+  Autoplay,
   Mousewheel,
   Pagination,
   Scrollbar,
@@ -36,6 +47,7 @@ import SwiperCore, {
 } from "swiper";
 
 import Card from "../../components/Card";
+import { cardData } from "../../data";
 
 import "./Experience.css";
 
@@ -83,8 +95,17 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
     <section id="experience" ref={experienceRef}>
       {/* <Card /> */}
       <div className="experience-container">
-        <div className="experience-title">
-          <h1>experience</h1>
+        <div className="experience-text">
+          <div className="experience-title">
+            <h1>experience</h1>
+          </div>
+          <div className="experience-subtitle">
+            <p>
+              My work and experience are done in-house and therefore cannot be
+              shared publicly.
+            </p>
+            <p>However, I provided descriptions on some of them.</p>
+          </div>
         </div>
         {/* <Card /> */}
         <div className="swiper-flex-container">
@@ -94,6 +115,7 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
               // modules={[EffectCoverflow]}
               modules={[
                 A11y,
+                Autoplay,
                 // EffectCoverflow,
                 Mousewheel,
                 Pagination,
@@ -113,7 +135,10 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
               centeredSlides={true}
               slidesPerView={1}
               spaceBetween={0}
-              autoplay={true}
+              autoplay={{
+                delay: 3000,
+                pauseOnMouseEnter: true,
+              }}
               // coverflowEffect={{
               //   depth: 10,
               //   modifier: 1,
@@ -121,7 +146,10 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
               //   scale: 1,
               //   stretch: 0,
               // }}
-              navigation
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
               loop={true}
               // autoHeight={true}
               // onSlideChange={() => console.log("slide change")}
@@ -145,24 +173,21 @@ const Experience = forwardRef<TExperienceHandler, TProps>((props, ref) => {
                 },
               }}
             >
-              <SwiperSlide>
-                <Card {...cardArray[0]} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card {...cardArray[0]} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card {...cardArray[0]} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card {...cardArray[0]} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card {...cardArray[0]} />
-              </SwiperSlide>
-              <SwiperSlide>
-                <Card {...cardArray[0]} />
-              </SwiperSlide>
+              {cardData.map((data, index) => {
+                return (
+                  <SwiperSlide key={`swiper-slide-${index}`}>
+                    <Card {...data} />
+                  </SwiperSlide>
+                );
+              })}
+              <div className="slider-buttons">
+                <button className="swiper-button-prev">
+                  <FontAwesomeIcon icon={faCircleChevronLeft} />
+                </button>
+                <button className="swiper-button-next">
+                  <FontAwesomeIcon icon={faCircleChevronRight} />
+                </button>
+              </div>
             </Swiper>
           </div>
         </div>
