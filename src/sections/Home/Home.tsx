@@ -86,6 +86,15 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
     );
   };
 
+  const downloadResume = (url: string) => {
+    const linkElement: HTMLAnchorElement = document.createElement("a");
+    linkElement.href = url;
+    linkElement.download = url.split("/").pop() as string;
+    document.body.appendChild(linkElement);
+    linkElement.click();
+    document.body.removeChild(linkElement);
+  };
+
   return (
     <section id="home" ref={homeRef}>
       <div className="home-bg">
@@ -102,25 +111,15 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
               experienced in the field for {<span id="years">5 years</span>}.
             </span>
             <div className="btn-container">
-              <Button id="btn-download">
-                <a
-                  className="pdf-download-link"
-                  download={"bien_joseph_de_guzman_resume.pdf"}
-                  href={resumePDF}
-                >
-                  <span style={{ marginRight: "8px" }}>Download resume</span>
-                  <FontAwesomeIcon icon={faCircleArrowDown} />
-                </a>
+              <Button
+                id="btn-download"
+                onClick={() => downloadResume(resumePDF)}
+              >
+                <span style={{ marginRight: "8px" }}>Download resume</span>
+                <FontAwesomeIcon icon={faCircleArrowDown} />
               </Button>
-              <Button id="btn-new-tab">
-                <a
-                  className="pdf-download-link"
-                  target="_blank"
-                  rel="noreferrer"
-                  href={resumePDF}
-                >
-                  <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-                </a>
+              <Button id="btn-new-tab" onClick={() => window.open(resumePDF)}>
+                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
               </Button>
             </div>
           </div>
