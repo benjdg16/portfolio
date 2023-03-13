@@ -32,6 +32,9 @@
   - [ ] Remove unsued code
   - [ ] Remove unused assets
   - [ ] Remove unused styling classes
+- [ ] Thumbnail
+- [ ] Update `index.html`
+- [ ] Update icon
 
 ## Could have
 
