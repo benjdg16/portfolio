@@ -43,6 +43,7 @@
   - [ ] System settings theme
 - [ ] Cursor animation
 - [ ] Scroll indicator
+- [ ] Analytics
 
 ## Would have
 
