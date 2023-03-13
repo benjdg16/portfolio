@@ -40,6 +40,7 @@
 ## Bugs
 
 - [ ] New tab icon not working when clicking outside the icon.
+- [ ] Navigation buttons interfering with text visibility when viewing on smaller screens.
 - [ ] Background image not displaying as intended.
 
 ## Notes
