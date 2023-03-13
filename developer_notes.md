@@ -26,12 +26,19 @@
 
 ## Should have
 
-- [ ]
+- [ ] Cleanup
+  - [ ] Remove unused packages
+  - [ ] Remove comments
+  - [ ] Remove unsued code
+  - [ ] Remove unused assets
+  - [ ] Remove unused styling classes
 
 ## Could have
 
 - [ ] Dark mode
   - [ ] System settings theme
+- [ ] Cursor animation
+- [ ] Scroll indicator
 
 ## Would have
 
