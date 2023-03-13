@@ -26,6 +26,7 @@
 
 ## Should have
 
+- [ ] Update hero text
 - [ ] Cleanup
   - [ ] Remove unused packages
   - [ ] Remove comments
