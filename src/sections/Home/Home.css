@@ -1,10 +1,16 @@
 section#home {
   height: 100vh;
   width: 100%;
-  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url("../../assets/background-waves.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-section#home::after {
+/* section#home::after {
   content: "";
   width: 100%;
   height: 100%;
@@ -14,14 +20,18 @@ section#home::after {
   transform-origin: left top;
   transform: skewY(173deg);
   background-color: white;
-}
+} */
 
 .home-bg {
-  height: 100%;
+  /* height: 100%;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+
+  /* background-image: url("../../assets/background-waves.svg");
+  background-size: cover;
+  background-repeat: no-repeat; */
 }
 
 .home-container {
