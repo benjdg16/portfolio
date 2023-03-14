@@ -1,4 +1,8 @@
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
+
 import { ICard } from "../components/Card/Card";
+import { IContactInfo } from "../components/ContactInfo/ContactInfo";
 import { TOOLS } from "../constants";
 
 const cardData: Array<ICard> = [
@@ -166,4 +170,28 @@ const cardData: Array<ICard> = [
   },
 ];
 
-export { cardData };
+const contactInfoData: Array<IContactInfo> = [
+  {
+    faLogoClass: faLinkedin,
+    title: `LinkedIn`,
+    text: `Connect with me`,
+    link: `https://www.linkedin.com/in/benjodeguzman`,
+    linkText: `https://www.linkedin.com/in/benjodeguzman`,
+  },
+  {
+    faLogoClass: faEnvelope,
+    title: `E-mail`,
+    text: `Send me an e-mail`,
+    link: `mailto:benjdg16@gmail.com`,
+    linkText: `benjdg16@gmail.com`,
+  },
+  {
+    faLogoClass: faGithub,
+    title: `Github`,
+    text: `Check out my profile`,
+    link: `https://github.com/benjdg16dev`,
+    linkText: `https://github.com/benjdg16dev`,
+  },
+];
+
+export { cardData, contactInfoData };

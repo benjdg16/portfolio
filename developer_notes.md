@@ -19,10 +19,11 @@
   - [ ] a11y
   - [ ] Animation
 - [ ] Contact Section
-  - [ ] LinkedIn
-  - [ ] Indeed
-  - [ ] Email
+  - [x] LinkedIn
+  - [x] Indeed
+  - [x] Email
   - [ ] Mobile
+- [x] Footer
 
 ## Should have
 
