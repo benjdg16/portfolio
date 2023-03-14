@@ -130,6 +130,7 @@ const App = () => {
           <Section.Home ref={homeRef} />
           <Section.Experience ref={experienceRef} isExpTLVisible />
           <Section.Contact />
+          <Section.Footer />
         </div>
       </div>
     </>

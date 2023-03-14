@@ -1,0 +1,23 @@
+.footer {
+  all: unset;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #161616;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  color: white;
+}
+
+.footer-container p {
+  font-size: 0.75rem;
+  font-weight: lighter;
+  font-family: "Montserrat", sans-serif;
+}

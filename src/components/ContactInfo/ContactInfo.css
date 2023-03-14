@@ -1,0 +1,80 @@
+.contact-info {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding: 1rem;
+  border-radius: 0;
+  background: #282828;
+  box-shadow: 5px 5px 0px rgb(255 255 255);
+  transition: all 0.35s cubic-bezier(0.22, 0.68, 0, 1.71);
+  text-align: end;
+  word-wrap: break-word;
+  color: white;
+}
+
+.contact-info:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.contact-info:hover a {
+  text-decoration: underline;
+}
+
+.contact-info > div {
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.contact-info-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info-text {
+  color: #b5b5b5;
+}
+
+.contact-info-link a {
+  all: unset;
+  background-color: black;
+  font-size: 0.85rem;
+  transition: all 0.25s ease-out !important;
+}
+
+.contact-info-link a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width: 641px) {
+  .contact-info {
+    flex: 1;
+    text-align: start;
+    width: calc((100vw - 4rem) / 3);
+  }
+
+  .contact-info-header {
+    justify-content: flex-start;
+  }
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width: 961px) {
+  .contact-info-header {
+    font-size: 1.5rem;
+  }
+
+  .contact-info-text,
+  .contact-info-link {
+    font-size: 1.25rem;
+  }
+}
