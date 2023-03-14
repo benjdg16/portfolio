@@ -97,58 +97,45 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
 
   return (
     <section id="home" ref={homeRef}>
-      <div className="home-bg">
-        <div className="home-container">
-          <div className="hero-text-container">
-            <span className="hero-superscript">Hello there!</span>
-            <span className="hero-text">
-              <h1>
-                I'm <span id="name">Bien Joseph</span>
-              </h1>
-            </span>
-            <span className="hero-subscript">
-              A {typedHTML()} focusing heavy on front-end technologies. Industry
-              experienced in the field for {<span id="years">5 years</span>}.
-            </span>
-            <div className="btn-container">
-              <Button
-                id="btn-download"
-                onClick={() => downloadResume(resumePDF)}
-              >
-                <span style={{ marginRight: "8px" }}>Download resume</span>
-                <FontAwesomeIcon icon={faCircleArrowDown} />
-              </Button>
-              <Button id="btn-new-tab" onClick={() => window.open(resumePDF)}>
-                <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
-              </Button>
-            </div>
+      <div className="home-container">
+        <div className="hero-text-container">
+          <span className="hero-superscript">Hello there!</span>
+          <span className="hero-text">
+            <h1>
+              I'm <span id="name">Bien Joseph</span>
+            </h1>
+          </span>
+          <span className="hero-subscript">
+            A {typedHTML()} focusing heavy on front-end technologies. Industry
+            experienced in the field for {<span id="years">5 years</span>}.
+          </span>
+          <div className="btn-container">
+            <Button id="btn-download" onClick={() => downloadResume(resumePDF)}>
+              <span style={{ marginRight: "8px" }}>Download resume</span>
+              <FontAwesomeIcon icon={faCircleArrowDown} />
+            </Button>
+            <Button id="btn-new-tab" onClick={() => window.open(resumePDF)}>
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} />
+            </Button>
           </div>
-          <div className="hero-svg-container">
-            <div className="hero-svg-relative-container">
-              <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
-              <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
-              <JsLogo
-                id="js-logo"
-                className="hero-svg"
-                title="JavaScript logo"
-              />
-              <NodeLogo id="node-logo" className="hero-svg" title="Node logo" />
-              <TsLogo
-                id="ts-logo"
-                className="hero-svg"
-                title="TypeScript logo"
-              />
-              <NextLogo
-                id="next-logo"
-                className="hero-svg"
-                title="Next.js logo"
-              />
-              <ReactLogo
-                id="react-logo"
-                className="hero-svg"
-                title="React.js logo"
-              />
-            </div>
+        </div>
+        <div className="hero-svg-container">
+          <div className="hero-svg-relative-container">
+            <CssLogo id="css-logo" className="hero-svg" title="CSS logo" />
+            <HtmlLogo id="html-logo" className="hero-svg" title="HTML logo" />
+            <JsLogo id="js-logo" className="hero-svg" title="JavaScript logo" />
+            <NodeLogo id="node-logo" className="hero-svg" title="Node logo" />
+            <TsLogo id="ts-logo" className="hero-svg" title="TypeScript logo" />
+            <NextLogo
+              id="next-logo"
+              className="hero-svg"
+              title="Next.js logo"
+            />
+            <ReactLogo
+              id="react-logo"
+              className="hero-svg"
+              title="React.js logo"
+            />
           </div>
         </div>
       </div>
