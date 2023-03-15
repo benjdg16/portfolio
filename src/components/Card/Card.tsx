@@ -1,6 +1,4 @@
-import React from "react";
-
-import { TOOLS, TTool } from "../../constants";
+import { TTool } from "../../constants";
 import Chip from "../Chip";
 
 import "./Card.css";
@@ -24,12 +22,6 @@ const Card = ({
   description,
   chips,
 }: ICard) => {
-  const descriptionList = [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    "Duis volutpat leo vitae nisl euismod tincidunt.",
-    "Fusce tempor mauris sit amet mi convallis, a bibendum libero egestas.",
-    "Integer pharetra pellentesque risus, non porttitor eros commodo at.",
-  ];
   return (
     <div className="card">
       <div className="card-header">
@@ -65,9 +57,6 @@ const Card = ({
         {chips.map((chip, index) => (
           <Chip key={index} type={chip} />
         ))}
-        {/* <Chip />
-        <Chip />
-        <Chip /> */}
       </div>
     </div>
   );
