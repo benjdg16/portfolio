@@ -38,10 +38,6 @@ section#experience {
   color: #3a3a3a;
 }
 
-.experience-card {
-  height: 100vh;
-}
-
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (min-width: 961px) {
   .experience-container {
@@ -50,13 +46,5 @@ section#experience {
 
   .experience-title h1 {
     font-size: 4rem;
-  }
-
-  .card-header {
-    flex-direction: row;
-  }
-
-  .card-header-date {
-    align-items: flex-end;
   }
 }

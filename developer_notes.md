@@ -22,21 +22,23 @@
   - [x] LinkedIn
   - [x] Indeed
   - [x] Email
-  - [ ] Mobile
+  - [x] Mobile
+  - [ ] a11y
+  - [ ] Animation
 - [x] Footer
 
 ## Should have
 
 - [ ] Update hero text
 - [ ] Cleanup
-  - [ ] Remove unused packages
-  - [ ] Remove comments
-  - [ ] Remove unsued code
-  - [ ] Remove unused assets
+  - [x] Remove unused packages
+  - [x] Remove comments
+  - [x] Remove unsued code
+  - [x] Remove unused assets
   - [ ] Remove unused styling classes
-- [ ] Thumbnail
-- [ ] Update `index.html`
-- [ ] Update icon
+- [x] Thumbnail
+- [x] Update `index.html`
+- [x] Update icon
 
 ## Could have
 
