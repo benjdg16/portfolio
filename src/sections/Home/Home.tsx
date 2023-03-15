@@ -1,4 +1,4 @@
-import React, {
+import {
   forwardRef,
   RefObject,
   MutableRefObject,
@@ -8,15 +8,10 @@ import React, {
 } from "react";
 import TypeIt from "typeit-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
-// import fa358
-
 import {
   faCircleArrowDown,
   faArrowUpRightFromSquare,
 } from "@fortawesome/free-solid-svg-icons";
-
-// import { FaArrowCircleDown } from "react-icons/fa";
 
 import { ReactComponent as CssLogo } from "../../assets/stack-logos/css.svg";
 import { ReactComponent as HtmlLogo } from "../../assets/stack-logos/html.svg";
@@ -25,8 +20,8 @@ import { ReactComponent as NextLogo } from "../../assets/stack-logos/next.svg";
 import { ReactComponent as NodeLogo } from "../../assets/stack-logos/node.svg";
 import { ReactComponent as ReactLogo } from "../../assets/stack-logos/react.svg";
 import { ReactComponent as TsLogo } from "../../assets/stack-logos/ts.svg";
-import Button from "../../components/Button";
 import resumePDF from "../../assets/files/bien_joseph_de_guzman_resume.pdf";
+import Button from "../../components/Button";
 
 import "./Home.css";
 

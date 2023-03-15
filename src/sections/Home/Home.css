@@ -4,34 +4,9 @@ section#home {
   display: flex;
   justify-content: center;
   align-items: center;
-
   background-image: url("../../assets/background-waves.svg");
   background-size: cover;
   background-repeat: no-repeat;
-}
-
-/* section#home::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  background: inherit;
-  z-index: -1;
-  transform-origin: left top;
-  transform: skewY(173deg);
-  background-color: white;
-} */
-
-.home-bg {
-  /* height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-
-  /* background-image: url("../../assets/background-waves.svg");
-  background-size: cover;
-  background-repeat: no-repeat; */
 }
 
 .home-container {
@@ -44,12 +19,9 @@ section#home {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 2rem; */
 }
 
 .hero-text-container {
-  /* flex: 1 0 50%; */
-  /* min-width: 50%; */
   margin: 2rem 0;
 }
 
@@ -59,7 +31,6 @@ section#home {
   font-size: 1.75rem;
   margin-bottom: 1rem;
   display: inline-block;
-  /* font-size: 2.25rem; */
 }
 
 .hero-text {
@@ -71,8 +42,6 @@ section#home {
   font-size: 3rem;
   line-height: 1;
   margin-bottom: 2rem;
-
-  /* font-size: 5.25rem; */
 }
 
 .hero-text #name {
@@ -86,11 +55,8 @@ section#home {
   color: #d1d1d1;
   font-family: "Nunito Sans", sans-serif;
   font-size: 1.25rem;
-  /* font-size: 2rem; */
   display: block;
   margin-bottom: 1rem;
-
-  /* mq */
   min-height: 130px;
 }
 
@@ -109,13 +75,11 @@ section#home {
 }
 
 .btn-container button {
-  /* box-sizing: border-box; */
   border: 0;
 }
 
 #btn-download {
   border-radius: 5px 0 0 5px;
-  /* padding: 0.25rem 0 0.25rem 1.5rem; */
 }
 
 #btn-download:hover {
@@ -136,25 +100,16 @@ section#home {
 
 .hero-svg-container {
   width: 100%;
-  /* background: red; */
-  /* height: 30vh; */
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .hero-svg-relative-container {
-  /* flex: 1 1 50%; */
   min-width: 50%;
-  /* display: flex;
-    justify-content: center;
-    align-items: center; */
   position: relative;
-  /* height: 32rem; */
-
   height: 256px;
   width: 100%;
-  /* max-width: 100vw; */
 }
 
 .hero-svg-relative-container svg {
@@ -167,9 +122,6 @@ svg#css-logo {
   width: 116px;
   left: 57%;
   top: 14%;
-  /* 
-  left: 54%;
-  top: 11%; */
 }
 
 svg#html-logo {
@@ -177,9 +129,6 @@ svg#html-logo {
   width: 132.5px;
   top: 32%;
   left: 30%;
-
-  /* top: 28%;
-  left: 32%; */
 }
 
 svg#js-logo {
@@ -187,9 +136,6 @@ svg#js-logo {
   width: 189px;
   top: 73%;
   left: 24%;
-
-  /* top: 76%;
-  left: 27%; */
 }
 
 svg#node-logo {
@@ -197,9 +143,6 @@ svg#node-logo {
   width: 140.5px;
   top: 71%;
   left: 84%;
-
-  /* top: 65%;
-  left: 86%; */
 }
 
 svg#ts-logo {
@@ -207,9 +150,6 @@ svg#ts-logo {
   width: 141.5px;
   top: 35%;
   left: 85%;
-
-  /* top: 27%;
-  left: 82%; */
 }
 
 svg#next-logo {
@@ -217,9 +157,6 @@ svg#next-logo {
   width: 156.5px;
   top: 96%;
   left: 57%;
-
-  /* top: 93%;
-  left: 66%; */
 }
 
 svg#react-logo {
@@ -227,12 +164,8 @@ svg#react-logo {
   width: 191px;
   left: 58%;
   top: 52%;
-  /* 
-  left: 57%;
-  top: 50%; */
 }
 
-/* Special */
 .pdf-download-link {
   all: unset;
   display: flex;
@@ -242,9 +175,6 @@ svg#react-logo {
 
 /* smartphones, iPhone, portrait 480x320 phones */
 @media (min-width: 320px) {
-  .home-container {
-    /* flex-direction: column; */
-  }
 }
 
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -316,9 +246,6 @@ svg#react-logo {
 
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (min-width: 641px) {
-  /* .hero-svg-relative-container {
-    background-color: red;
-  } */
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */

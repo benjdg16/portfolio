@@ -1,11 +1,9 @@
 section#experience {
-  /* background-color: black; */
   min-height: 100vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   background-color: #f3f3f3;
 }
 
@@ -20,10 +18,6 @@ section#experience {
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-}
-
-.experience-title {
-  /* padding: 24px 0; */
 }
 
 .experience-title h1 {
@@ -46,16 +40,6 @@ section#experience {
 
 .experience-card {
   height: 100vh;
-}
-
-#experience1 {
-  background-color: aqua;
-}
-#experience2 {
-  background-color: rgb(60, 255, 0);
-}
-#experience3 {
-  background-color: rgb(255, 238, 0);
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
