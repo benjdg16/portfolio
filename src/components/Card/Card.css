@@ -119,4 +119,12 @@ span#duration {
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .card-header {
+    flex-direction: row;
+  }
+
+  .card-header-date {
+    align-items: flex-end;
+  }
 }

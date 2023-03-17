@@ -1,4 +1,4 @@
-import { useState, useRef, useLayoutEffect } from "react";
+import { useRef, useLayoutEffect } from "react";
 import gsap, { Expo } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
@@ -71,12 +71,10 @@ const App = () => {
     <>
       {/* <div className="cursor"></div> */}
       <div className="app" ref={appRef}>
-        <div className="app-container">
-          <Section.Home ref={homeRef} />
-          <Section.Experience ref={experienceRef} />
-          <Section.Contact />
-          <Section.Footer />
-        </div>
+        <Section.Home ref={homeRef} />
+        <Section.Experience ref={experienceRef} />
+        <Section.Contact />
+        <Section.Footer />
       </div>
     </>
   );
