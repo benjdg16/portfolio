@@ -101,7 +101,7 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
             </h1>
           </span>
           <span className="hero-subscript">
-            A {typedHTML()} focusing heavy on front-end technologies. Industry
+            A {typedHTML()} focusing heavily on front-end technologies. Industry
             experienced in the field for {<span id="years">5 years</span>}.
           </span>
           <div className="btn-container">

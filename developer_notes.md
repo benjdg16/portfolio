@@ -29,7 +29,7 @@
 
 ## Should have
 
-- [ ] Update hero text
+- [x] Update hero text
 - [ ] Cleanup
   - [x] Remove unused packages
   - [x] Remove comments
