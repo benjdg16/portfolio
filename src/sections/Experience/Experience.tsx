@@ -42,7 +42,7 @@ const Experience = forwardRef<TExperienceHandler, {}>((props, ref) => {
       <div className="experience-container">
         <div className="experience-text">
           <div className="experience-title">
-            <h1>experience</h1>
+            <h1>Experience</h1>
           </div>
           <div className="experience-subtitle">
             <p>

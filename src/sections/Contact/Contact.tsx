@@ -9,7 +9,7 @@ const Contact = () => {
     <section id="contact">
       <div className="contact-container">
         <div className="contact-text">
-          <h2>let's work together!</h2>
+          <h2>Let's work together!</h2>
         </div>
         <div className="contact-info-container">
           {contactInfoData.map((data, index) => (
