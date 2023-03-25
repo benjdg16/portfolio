@@ -32,7 +32,6 @@ type THomeMouseCoordinates = {
 };
 
 export type THomeRefHandler = {
-  homeRef: RefObject<HTMLElement>;
   mouseCoordinates: MutableRefObject<THomeMouseCoordinates>;
 };
 
@@ -44,7 +43,6 @@ const Home = forwardRef<THomeRefHandler, TProps>((props, ref) => {
   });
 
   useImperativeHandle(ref, () => ({
-    homeRef,
     mouseCoordinates,
   }));
 
