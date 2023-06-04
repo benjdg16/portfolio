@@ -189,8 +189,8 @@ const contactInfoData: Array<IContactInfo> = [
     faLogoClass: faGithub,
     title: `Github`,
     text: `Check out my profile`,
-    link: `https://github.com/benjdg16dev`,
-    linkText: `https://github.com/benjdg16dev`,
+    link: `https://github.com/benjdg16`,
+    linkText: `https://github.com/benjdg16`,
   },
 ];
 
